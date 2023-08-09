@@ -15,7 +15,6 @@ pygame.display.set_caption("Brawler")
 clock = pygame.time.Clock()
 FPS = 60
 
-
 RED = (255, 0, 0)
 YELLOW = (255, 255, 0)
 WHITE = (255, 255, 255)
@@ -26,7 +25,6 @@ last_count_update = pygame.time.get_ticks()
 score = [0, 0]
 round_over = False
 ROUND_OVER_COOLDOWN = 2000
-
 WARRIOR_SIZE = 162
 WARRIOR_SCALE = 4
 WARRIOR_OFFSET = [72, 56]
@@ -47,7 +45,11 @@ victory_img = pygame.image.load("vittoria.png").convert_alpha()
 
 WARRIOR_ANIMATION_STEPS = [10, 8, 1, 7, 7, 3, 7]
 WIZARD_ANIMATION_STEPS = [8, 8, 1, 8, 8, 3, 7]
+#inserimento audio 
 
+
+music=pygame.mixer.Sound("musica2.mp3")
+music.play()
 
 def draw_text(text, font, text_col, x, y):
   img = font.render(text, True, text_col)
@@ -121,8 +123,6 @@ while run:
   for event in pygame.event.get():
     if event.type == pygame.QUIT:
       run = False
-
-
 
   pygame.display.update()
 
